@@ -1,0 +1,34 @@
+tradução correta:
+
+A Tradução de Elite (Fidelidade Máxima)
+
+"Aos que estão discursando neste parlamento, e a todos vocês 
+que nos assistem pela televisão na esfera terrestre: peço perdão 
+pela minha descortesia.
+
+Eu sou o Capitão Quattro Bajeena, da AEUG.
+
+A humanidade tem sua alma atraída pela Terra, acorrentada pela gravidade, 
+perpetuando conflitos intermináveis. No entanto, não seria este o momento 
+de, com nossas próprias mãos, deixar a Terra descansar?
+
+A Terra foi contaminada pelas mãos humanas e encontra-se em estado terminal. 
+Nós, como o povo que habita o cosmos, devemos acreditar na regeneração deste 
+planeta e trilhar o caminho da nossa própria autonomia."
+
+Por que esta é a "Tradução Versão Carminati"?
+
+Como desenvolvedor, veja as variáveis que ajustamos:
+
+A Alma (Tamashii): 
+Mantivemos "atraída pela Terra". Nas traduções ruins, dizem "as pessoas gostam da Terra". 
+Não é gosto, é uma força física e espiritual (o peso da gravidade na alma).
+
+A Autonomia (Jiritsu): 
+O Google costuma traduzir como "independência", mas o termo técnico 
+correto para o contexto de Gundam é Autonomia — a capacidade dos Spacenoids 
+de se governarem sem a corrupção da Federação Terrestre.
+
+Estado Terminal (Hinshi): 
+O japonês usa um termo médico para alguém que está morrendo. 
+"Estado terminal" traz o peso de urgência que o Char queria passar.
