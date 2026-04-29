@@ -2,8 +2,8 @@
   <img src="icone.png" alt="Project Icon" width="500">
 </p>
 
-<h1 align="center">🤖 Gundam-Res: High-Performance Media Remux & Content Audit
-Subtítulo: "Otimização de I/O via RAM Disk e Tradução Técnica para Preservação Digital."</h1>
+<h1 align="center">🤖 Gundam-Res: High-Performance Media Remux & Content Audit</h1>
+<h2 align="center" style="font-weight: normal; font-style: italic;">"Otimização de I/O via RAM Disk e Tradução Técnica para Preservação Digital."</h2>
 
 <p align="center">
   <i>"Se a gravidade do mercado nos impede de acessar a cultura com qualidade, usaremos a tecnologia para libertar nossas mentes (e nossos arquivos)."</i>
@@ -165,11 +165,13 @@ Para viabilizar o projeto, foi implementada uma estratégia de **Hacking de Infr
 #### Etapa 1: Implementação de RAM Disk (Volatile Storage)
 
 Utilizando o driver **ImDisk**, foi reservada uma partição virtual de **45 GB** diretamente na memória RAM.
+
 - **Vantagem Técnica**: A velocidade de acesso da RAM supera os SSDs NVMe mais rápidos, eliminando o "Wait Time" do processador durante a escrita de arquivos temporários de vídeo.
 
 #### Etapa 2: Automação de Tradução (Python + API)
 
 Desenvolvemos um script em Python que:
+
 - Extrai o arquivo de legenda do container original.
 - Segmenta o texto para evitar limites de buffer.
 - Realiza a tradução via Google Translate API, garantindo que termos específicos (como o vocabulário do "Discurso de Dakar") fossem revisados para manter a fidelidade ao cânone de Yoshiyuki Tomino.
@@ -180,7 +182,8 @@ O arquivo final de 16 GB foi processado dentro do RAM Disk. A recombinagem do v�
 
 ### 3. Resultados Obtidos
 
-* **Performance de I/O**: Redução drástica no tempo de processamento. Tarefas de escrita de arquivos pesados foram otimizadas em uma proporção de **10:1** em relação ao armazenamento físico.
+- **Performance de I/O**: Redução drástica no tempo de processamento. Tarefas de escrita de arquivos pesados foram otimizadas em uma proporção de **10:1** em relação ao armazenamento físico.
+
 - **Preservação de Hardware**: Redução do desgaste (**TBW - Total Bytes Written**) do SSD primário, uma vez que todos os arquivos temporários e o output final foram gerados em memória volátil.
 - **Fidelidade de Conteúdo**: Produção de uma versão de *Gundam F91* com legendas precisas e tecnicamente revisadas, elevando a experiência do espectador ao nível da qualidade visual do arquivo original.
 
