@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icone.png" alt="Project Icon" width="150">
+</p>
+
 <h1 align="center">🤖 Project ASAT: Neural Subtitle Translation & I/O Engineering</h1>
 
 <p align="center">
