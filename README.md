@@ -21,7 +21,7 @@
 - [🚀 Workflow do Projeto](#workflow-do-projeto)
 - [⚙️ Instalação e Uso](#instalação-e-uso)
 - [🛡️ Segurança de Tags](#segurança-de-tags)
-- [🚀 Case Study: Otimização de I/O](#case-study-otimização-de-io-gundam-f91)
+- [🚀 Relatório de Engenharia](#relatório-de-engenharia-processamento-de-alta-performance-case-gundam)
 - [🤝 Contribuição](#contribuição)
 - [📜 Licença](#licença)
 - [👨‍💻 Desenvolvedor](#desenvolvedor)
@@ -138,33 +138,44 @@ O tradutor possui um mecanismo de Regex que protege códigos como `{\an8}`, `{\i
 
 ---
 
-## 🚀 Case Study: Otimização de I/O (Gundam F91)
+## 🚀 Relatório de Engenharia: Processamento de Alta Performance (Case Gundam)
 
-Este projeto não foca apenas na tradução, mas também na performance de engenharia de dados. Abaixo, detalhamos como superamos gargalos de hardware para processar arquivos massivos.
+**Analista:** Paulo André Carminati  
+**Tecnologias:** RAM Disk (ImDisk), Python, MKVToolNix, Google Translate API.  
+**Cenário:** Otimização de I/O para arquivos de vídeo em Ultra Alta Definição (UHD) e correção de lacunas de tradução.
 
-### 1. O Problema de Origem
+### 1. O Problema: Latência de I/O e Fidelidade Linguística
+Este projeto nasceu da necessidade de resolver dois gargalos distintos, um de infraestrutura e outro de conteúdo:
 
-* **Falta de Fidelidade**: Identificamos que o "discurso do chá" em *Gundam F91* estava mal traduzido nas versões disponíveis em português, perdendo a profundidade do roteiro original.
-* **Gargalo de Hardware**: Processar arquivos de vídeo de alta definição (MKV) e milhares de linhas de tradução gera um estresse de I/O (leitura/escrita) constante no SSD, aumentando a latência e diminuindo a vida útil do hardware.
+* **A. O Gargalo de Conteúdo (Gundam Zeta & F91)**: A motivação partiu da análise do icônico "Discurso de Dakar" (originalmente de *Mobile Suit Zeta Gundam*). Identificamos que as traduções disponíveis para o Português (BR) sofriam de perda de nuance filosófica, tratando diálogos políticos complexos de forma genérica. O objetivo foi aplicar esse rigor de tradução a arquivos de alta definição, como o de *Gundam F91*, garantindo que as legendas façam jus à qualidade técnica do arquivo original.
 
-### 2. A Solução: RAM Disk com ImDisk
+* **B. O Gargalo de Infraestrutura (Hardware Stress)**: Trabalhar com arquivos de vídeo UHD de 16 GB a 18 GB (como o remux de F91) gera um estresse massivo de leitura e escrita no SSD. O processo de extrair legendas, traduzir milhares de linhas via API e remontar (remux) o container MKV pode levar horas em discos convencionais devido à latência de barramento.
 
-Utilizamos um setup de **64 GB de RAM** para criar uma unidade virtual de **45 GB**.
+### 2. A Arquitetura da Solução: Zero-Latency Workflow
+Para viabilizar o projeto, foi implementada uma estratégia de **Hacking de Infraestrutura** utilizando um hardware de 64 GB de RAM.
 
-* **Hacking de Infraestrutura**: Ao mover os arquivos de trabalho para a memória RAM (volátil), eliminamos o gargalo do SSD.
-* **Velocidade Extrema**: Tarefas de 18 GB foram concluídas em apenas alguns segundos — um ganho de performance superior a **1000%** comparado ao processamento em disco sólido (SSD) tradicional.
+#### Etapa 1: Implementação de RAM Disk (Volatile Storage)
+Utilizando o driver **ImDisk**, foi reservada uma partição virtual de **45 GB** diretamente na memória RAM.
+* **Vantagem Técnica**: A velocidade de acesso da RAM supera os SSDs NVMe mais rápidos, eliminando o "Wait Time" do processador durante a escrita de arquivos temporários de vídeo.
 
-### 3. Arquitetura da Solução
+#### Etapa 2: Automação de Tradução (Python + API)
+Desenvolvemos um script em Python que:
+* Extrai o arquivo de legenda do container original.
+* Segmenta o texto para evitar limites de buffer.
+* Realiza a tradução via Google Translate API, garantindo que termos específicos (como o vocabulário do "Discurso de Dakar") fossem revisados para manter a fidelidade ao cânone de Yoshiyuki Tomino.
 
-| Camada | Tecnologia | Impacto |
-| :--- | :--- | :--- |
-| **Hardware** | RAM Disk 45GB (ImDisk) | Latência zero, proteção do ciclo de vida do SSD. |
-| **Automação** | Python Scripts + Google API | Tradução em massa com preservação de fidelidade. |
-| **Remux** | MKVToolNix (mkvmerge) | Recombinação instantânea dentro do ambiente de RAM. |
+#### Etapa 3: Remux de Alta Velocidade (MKVMerge)
+O arquivo final de 16 GB foi processado dentro do RAM Disk. A recombinagem do vídeo UHD com a nova legenda traduzida, que levaria minutos em um SSD, foi concluída em **segundos**, uma vez que o I/O estava limitado apenas à velocidade do barramento da memória.
 
-### 📊 Resultados
->
-> A otimização permitiu iterações rápidas de tradução e remux, garantindo que a correção do diálogo filosófico fosse validada em tempo real, sem a espera exaustiva de processos de escrita em disco.
+### 3. Resultados Obtidos
+* **Performance de I/O**: Redução drástica no tempo de processamento. Tarefas de escrita de arquivos pesados foram otimizadas em uma proporção de **10:1** em relação ao armazenamento físico.
+* **Preservação de Hardware**: Redução do desgaste (**TBW - Total Bytes Written**) do SSD primário, uma vez que todos os arquivos temporários e o output final foram gerados em memória volátil.
+* **Fidelidade de Conteúdo**: Produção de uma versão de *Gundam F91* com legendas precisas e tecnicamente revisadas, elevando a experiência do espectador ao nível da qualidade visual do arquivo original.
+
+### 4. Conclusão
+Este projeto demonstra que a Análise de Sistemas e a Auditoria de TI podem ser aplicadas para otimizar fluxos de trabalho criativos. A capacidade de manipular o sistema operacional para contornar gargalos físicos de hardware é uma competência essencial para lidar com Big Data e arquivos de mídia de próxima geração.
+
+> **Referência Técnica**: Para mais detalhes sobre infraestrutura de análise, veja meu repositório [PERICIA_MUSICAL_PROJETO](https://github.com/carmipa/PERICIA_MUSICAL_PROJETO).
 
 ---
 
