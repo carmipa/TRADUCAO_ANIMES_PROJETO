@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icone.png" alt="Project Icon" width="150">
+  <img src="icone.png" alt="Project Icon" width="500">
 </p>
 
 <h1 align="center">🤖 Project ASAT: Neural Subtitle Translation & I/O Engineering</h1>
