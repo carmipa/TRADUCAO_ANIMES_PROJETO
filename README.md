@@ -2,7 +2,8 @@
   <img src="icone.png" alt="Project Icon" width="500">
 </p>
 
-<h1 align="center">🤖 Project ASAT: Neural Subtitle Translation & I/O Engineering</h1>
+<h1 align="center">🤖 Gundam-Res: High-Performance Media Remux & Content Audit
+Subtítulo: "Otimização de I/O via RAM Disk e Tradução Técnica para Preservação Digital."</h1>
 
 <p align="center">
   <i>"Se a gravidade do mercado nos impede de acessar a cultura com qualidade, usaremos a tecnologia para libertar nossas mentes (e nossos arquivos)."</i>
@@ -18,6 +19,7 @@
 ---
 
 ## 📌 Índice
+
 - [🌌 Contexto & Inspiração](#contexto--inspiração-o-manifesto-de-dakar)
 - [📝 Descrição](#descrição)
 - [✨ Principais Funcionalidades](#principais-funcionalidades)
@@ -50,9 +52,9 @@ O cenário é icônico: Char Aznable invade a assembleia da Federação Terrestr
 
 Utilizamos IA avançada e APIs de tradução para capturar o que legendas convencionais perdem:
 
-* **O Verbo "Yasumaseru" (休ませる)**: Mais do que "deixar em paz", é **"fazer descansar"**. A Terra é vista como um organismo que precisa de um período de repouso (*fallow*) da atividade humana.
-* **O Conceito de "Inryoku" (引力)**: Literalmente "Gravidade". Na filosofia de Yoshiyuki Tomino, estar "preso pela gravidade" é uma metáfora para a estagnação espiritual. No áudio original, a entonação do dublador Shuichi Ikeda em *Inryoku* define o tom épico da cena.
-* **"Dame ni shite iru" (ダメにしている)**: Uma forma forte de dizer **"arruinar"** ou tornar estéril. A ferramenta busca preservar essa força acusatória contra a elite que degrada o planeta.
+- **O Verbo "Yasumaseru" (休ませる)**: Mais do que "deixar em paz", é **"fazer descansar"**. A Terra é vista como um organismo que precisa de um período de repouso (*fallow*) da atividade humana.
+- **O Conceito de "Inryoku" (引力)**: Literalmente "Gravidade". Na filosofia de Yoshiyuki Tomino, estar "preso pela gravidade" é uma metáfora para a estagnação espiritual. No áudio original, a entonação do dublador Shuichi Ikeda em *Inryoku* define o tom épico da cena.
+- **"Dame ni shite iru" (ダメにしている)**: Uma forma forte de dizer **"arruinar"** ou tornar estéril. A ferramenta busca preservar essa força acusatória contra a elite que degrada o planeta.
 
 ---
 
@@ -66,10 +68,10 @@ Utiliza técnicas de **Multithreading** para acelerar a tradução via Google Tr
 
 ## ✨ Principais Funcionalidades
 
-* 🔍 **Auditoria Técnica**: Análise profunda de arquivos MKV (Resolução, Bitrate, Profundidade de Cor e tipos de trilhas).
-* 📦 **Extração Automatizada**: Integração direta com `mkvextract` para isolar trilhas de áudio e legenda.
-* ⚡ **Tradução Turbo**: Processamento paralelo (Multithreading) com proteção de tags ASS/SSA (evita que o tradutor corrompa estilos de legenda).
-* 📊 **Identificação de Trilhas**: Diferenciação automática entre legendas baseadas em texto (SRT/ASS) e baseadas em imagem (PGS/VobSub).
+- 🔍 **Auditoria Técnica**: Análise profunda de arquivos MKV (Resolução, Bitrate, Profundidade de Cor e tipos de trilhas).
+- 📦 **Extração Automatizada**: Integração direta com `mkvextract` para isolar trilhas de áudio e legenda.
+- ⚡ **Tradução Turbo**: Processamento paralelo (Multithreading) com proteção de tags ASS/SSA (evita que o tradutor corrompa estilos de legenda).
+- 📊 **Identificação de Trilhas**: Diferenciação automática entre legendas baseadas em texto (SRT/ASS) e baseadas em imagem (PGS/VobSub).
 
 ---
 
@@ -105,8 +107,8 @@ graph TD
 
 ### Pré-requisitos
 
-* [Python 3.10+](https://www.python.org/)
-* [MKVToolNix](https://mkvtoolnix.download/) (Adicionado ao PATH do sistema ou configurado nos scripts)
+- [Python 3.10+](https://www.python.org/)
+- [MKVToolNix](https://mkvtoolnix.download/) (Adicionado ao PATH do sistema ou configurado nos scripts)
 
 ### Passo a Passo
 
@@ -149,34 +151,41 @@ O tradutor possui um mecanismo de Regex que protege códigos como `{\an8}`, `{\i
 **Cenário:** Otimização de I/O para arquivos de vídeo em Ultra Alta Definição (UHD) e correção de lacunas de tradução.
 
 ### 1. O Problema: Latência de I/O e Fidelidade Linguística
+
 Este projeto nasceu da necessidade de resolver dois gargalos distintos, um de infraestrutura e outro de conteúdo:
 
-* **A. O Gargalo de Conteúdo (Gundam Zeta & F91)**: A motivação partiu da análise do icônico "Discurso de Dakar" (originalmente de *Mobile Suit Zeta Gundam*). Identificamos que as traduções disponíveis para o Português (BR) sofriam de perda de nuance filosófica, tratando diálogos políticos complexos de forma genérica. O objetivo foi aplicar esse rigor de tradução a arquivos de alta definição, como o de *Gundam F91*, garantindo que as legendas façam jus à qualidade técnica do arquivo original.
+- **A. O Gargalo de Conteúdo (Gundam Zeta & F91)**: A motivação partiu da análise do icônico "Discurso de Dakar" (originalmente de *Mobile Suit Zeta Gundam*). Identificamos que as traduções disponíveis para o Português (BR) sofriam de perda de nuance filosófica, tratando diálogos políticos complexos de forma genérica. O objetivo foi aplicar esse rigor de tradução a arquivos de alta definição, como o de *Gundam F91*, garantindo que as legendas façam jus à qualidade técnica do arquivo original.
 
-* **B. O Gargalo de Infraestrutura (Hardware Stress)**: Trabalhar com arquivos de vídeo UHD de 16 GB a 18 GB (como o remux de F91) gera um estresse massivo de leitura e escrita no SSD. O processo de extrair legendas, traduzir milhares de linhas via API e remontar (remux) o container MKV pode levar horas em discos convencionais devido à latência de barramento.
+- **B. O Gargalo de Infraestrutura (Hardware Stress)**: Trabalhar com arquivos de vídeo UHD de 16 GB a 18 GB (como o remux de F91) gera um estresse massivo de leitura e escrita no SSD. O processo de extrair legendas, traduzir milhares de linhas via API e remontar (remux) o container MKV pode levar horas em discos convencionais devido à latência de barramento.
 
 ### 2. A Arquitetura da Solução: Zero-Latency Workflow
+
 Para viabilizar o projeto, foi implementada uma estratégia de **Hacking de Infraestrutura** utilizando um hardware de 64 GB de RAM.
 
 #### Etapa 1: Implementação de RAM Disk (Volatile Storage)
+
 Utilizando o driver **ImDisk**, foi reservada uma partição virtual de **45 GB** diretamente na memória RAM.
-* **Vantagem Técnica**: A velocidade de acesso da RAM supera os SSDs NVMe mais rápidos, eliminando o "Wait Time" do processador durante a escrita de arquivos temporários de vídeo.
+- **Vantagem Técnica**: A velocidade de acesso da RAM supera os SSDs NVMe mais rápidos, eliminando o "Wait Time" do processador durante a escrita de arquivos temporários de vídeo.
 
 #### Etapa 2: Automação de Tradução (Python + API)
+
 Desenvolvemos um script em Python que:
-* Extrai o arquivo de legenda do container original.
-* Segmenta o texto para evitar limites de buffer.
-* Realiza a tradução via Google Translate API, garantindo que termos específicos (como o vocabulário do "Discurso de Dakar") fossem revisados para manter a fidelidade ao cânone de Yoshiyuki Tomino.
+- Extrai o arquivo de legenda do container original.
+- Segmenta o texto para evitar limites de buffer.
+- Realiza a tradução via Google Translate API, garantindo que termos específicos (como o vocabulário do "Discurso de Dakar") fossem revisados para manter a fidelidade ao cânone de Yoshiyuki Tomino.
 
 #### Etapa 3: Remux de Alta Velocidade (MKVMerge)
+
 O arquivo final de 16 GB foi processado dentro do RAM Disk. A recombinagem do vídeo UHD com a nova legenda traduzida, que levaria minutos em um SSD, foi concluída em **segundos**, uma vez que o I/O estava limitado apenas à velocidade do barramento da memória.
 
 ### 3. Resultados Obtidos
+
 * **Performance de I/O**: Redução drástica no tempo de processamento. Tarefas de escrita de arquivos pesados foram otimizadas em uma proporção de **10:1** em relação ao armazenamento físico.
-* **Preservação de Hardware**: Redução do desgaste (**TBW - Total Bytes Written**) do SSD primário, uma vez que todos os arquivos temporários e o output final foram gerados em memória volátil.
-* **Fidelidade de Conteúdo**: Produção de uma versão de *Gundam F91* com legendas precisas e tecnicamente revisadas, elevando a experiência do espectador ao nível da qualidade visual do arquivo original.
+- **Preservação de Hardware**: Redução do desgaste (**TBW - Total Bytes Written**) do SSD primário, uma vez que todos os arquivos temporários e o output final foram gerados em memória volátil.
+- **Fidelidade de Conteúdo**: Produção de uma versão de *Gundam F91* com legendas precisas e tecnicamente revisadas, elevando a experiência do espectador ao nível da qualidade visual do arquivo original.
 
 ### 4. Conclusão
+
 Este projeto demonstra que a Análise de Sistemas e a Auditoria de TI podem ser aplicadas para otimizar fluxos de trabalho criativos. A capacidade de manipular o sistema operacional para contornar gargalos físicos de hardware é uma competência essencial para lidar com Big Data e arquivos de mídia de próxima geração.
 
 > **Referência Técnica**: Para mais detalhes sobre infraestrutura de análise, veja meu repositório [PERICIA_MUSICAL_PROJETO](https://github.com/carmipa/PERICIA_MUSICAL_PROJETO).
