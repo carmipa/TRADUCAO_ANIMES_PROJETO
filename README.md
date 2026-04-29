@@ -1,4 +1,4 @@
-# 🤖 Anime Subtitle Automation & Translation (ASAT)
+<h1 align="center">🤖 Project ASAT: Neural Subtitle Translation & I/O Engineering</h1>
 
 <p align="center">
   <i>"Se a gravidade do mercado nos impede de acessar a cultura com qualidade, usaremos a tecnologia para libertar nossas mentes (e nossos arquivos)."</i>
