@@ -1,6 +1,10 @@
 # 🤖 Anime Subtitle Automation & Translation (ASAT)
 
 <p align="center">
+  <i>"Se a gravidade do mercado nos impede de acessar a cultura com qualidade, usaremos a tecnologia para libertar nossas mentes (e nossos arquivos)."</i>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python Version">
   <img src="https://img.shields.io/badge/MKVToolNix-Integrado-orange?style=for-the-badge&logo=quicktime&logoColor=white" alt="MKVToolNix">
   <img src="https://img.shields.io/badge/Status-Desenvolvimento-green?style=for-the-badge" alt="Status">
