@@ -13,6 +13,21 @@
 
 ---
 
+## 📌 Índice
+- [🌌 Contexto & Inspiração](#contexto--inspiração-o-manifesto-de-dakar)
+- [📝 Descrição](#descrição)
+- [✨ Principais Funcionalidades](#principais-funcionalidades)
+- [🛠️ Tech Stack](#tech-stack)
+- [🚀 Workflow do Projeto](#workflow-do-projeto)
+- [⚙️ Instalação e Uso](#instalação-e-uso)
+- [🛡️ Segurança de Tags](#segurança-de-tags)
+- [🚀 Case Study: Otimização de I/O](#case-study-otimização-de-io-gundam-f91)
+- [🤝 Contribuição](#contribuição)
+- [📜 Licença](#licença)
+- [👨‍💻 Desenvolvedor](#desenvolvedor)
+
+---
+
 ## 🌌 Contexto & Inspiração: O Manifesto de Dakar
 
 Este projeto nasceu da necessidade de tratar com o devido respeito e precisão técnica as obras-primas da animação japonesa, especialmente a saga **Mobile Suit Gundam**. A fidelidade ao roteiro original é o pilar que sustenta o desenvolvimento desta ferramenta.
@@ -86,7 +101,7 @@ graph TD
 
 ### Pré-requisitos
 
-- [Python 3.10+](https://www.python.org/)
+* [Python 3.10+](https://www.python.org/)
 * [MKVToolNix](https://mkvtoolnix.download/) (Adicionado ao PATH do sistema ou configurado nos scripts)
 
 ### Passo a Passo
@@ -129,7 +144,7 @@ Este projeto não foca apenas na tradução, mas também na performance de engen
 
 ### 1. O Problema de Origem
 
-- **Falta de Fidelidade**: Identificamos que o "discurso do chá" em *Gundam F91* estava mal traduzido nas versões disponíveis em português, perdendo a profundidade do roteiro original.
+* **Falta de Fidelidade**: Identificamos que o "discurso do chá" em *Gundam F91* estava mal traduzido nas versões disponíveis em português, perdendo a profundidade do roteiro original.
 * **Gargalo de Hardware**: Processar arquivos de vídeo de alta definição (MKV) e milhares de linhas de tradução gera um estresse de I/O (leitura/escrita) constante no SSD, aumentando a latência e diminuindo a vida útil do hardware.
 
 ### 2. A Solução: RAM Disk com ImDisk
